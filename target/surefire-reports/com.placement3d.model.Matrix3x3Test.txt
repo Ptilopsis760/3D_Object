@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.placement3d.model.Matrix3x3Test
 -------------------------------------------------------------------------------
-Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in com.placement3d.model.Matrix3x3Test
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in com.placement3d.model.Matrix3x3Test

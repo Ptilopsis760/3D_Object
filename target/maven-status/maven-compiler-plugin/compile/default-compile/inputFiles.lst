@@ -1,7 +1,13 @@
 D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\model\Vector3D.java
 D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\model\Mesh.java
 D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\model\Triangle.java
-D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\geometry\BoundingBox.java
 D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\model\Matrix3x3.java
-D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\io\STLParser.java
+D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\space\Octree.java
+D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\model\PlacedModel.java
+D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\demo\STLReaderDemo.java
+D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\space\CollisionDetector.java
 D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\model\ModelInfo.java
+D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\space\SpaceManager.java
+D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\demo\DebugSTL.java
+D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\geometry\BoundingBox.java
+D:\CS\JAVA\3D_Object\src\main\java\com\placement3d\io\STLParser.java

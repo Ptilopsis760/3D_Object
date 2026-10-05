@@ -30,8 +30,15 @@ public final class Triangle {
     /** Normal vector perpendicular to the triangle surface */
     private final Vector3D normal;
 
-    /** Epsilon for floating-point comparisons */
-    private static final double EPSILON = 1e-9;
+    /**
+     * Epsilon for floating-point comparisons.
+     *
+     * <p>设置为1e-6 (0.001mm) 以适应实际STL文件精度。
+     * 3D打印的实际精度约为±0.1mm，STL文件坐标精度通常在0.01-0.1mm。
+     * 使用1e-6可以有效过滤真正的退化三角形（面积<0.000001mm²），
+     * 同时保留薄壁结构中的有效三角形。</p>
+     */
+    private static final double EPSILON = 1e-6;
 
     /**
      * Constructs a triangle from three vertices with automatic normal computation.

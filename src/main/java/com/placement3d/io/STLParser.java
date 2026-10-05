@@ -191,16 +191,35 @@ public class STLParser {
 
         // Parse triangles
         List<Triangle> triangles = new ArrayList<>((int) triangleCount);
+        int skippedCount = 0;
 
         for (int i = 0; i < triangleCount; i++) {
             try {
                 Triangle triangle = parseTriangle(buffer);
                 triangles.add(triangle);
+            } catch (IllegalArgumentException e) {
+                // 跳过退化三角形（面积为0的三角形）
+                // 这是STL导出工具的常见问题，不影响模型质量
+                skippedCount++;
+                if (skippedCount <= 10) {
+                    System.err.println("警告: 跳过退化三角形 #" + i + " (面积为0)");
+                }
             } catch (Exception e) {
                 throw new IllegalArgumentException(
                     "Error parsing triangle " + i + " in file: " + filePath, e
                 );
             }
+        }
+
+        if (skippedCount > 0) {
+            System.err.println("信息: 共跳过 " + skippedCount + " 个退化三角形 (" +
+                String.format("%.3f%%", skippedCount * 100.0 / triangleCount) + ")");
+        }
+
+        if (triangles.isEmpty()) {
+            throw new IllegalArgumentException(
+                "No valid triangles found in file: " + filePath
+            );
         }
 
         // Create and return the mesh
