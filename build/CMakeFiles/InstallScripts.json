@@ -1,0 +1,25 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/CS/JAVA/3D_Object/build/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Core/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Tools/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Dualizer/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Decimating/commandlineDecimater/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Smoothing/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/commandlineSubdivider/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/commandlineAdaptiveSubdivider/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/mconvert/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/mkbalancedpm/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Analyzer/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Decimating/DecimaterGui/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/QtViewer/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/ProgViewer/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/src/Unittests/cmake_install.cmake",
+		"D:/CS/JAVA/3D_Object/build/Doc/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

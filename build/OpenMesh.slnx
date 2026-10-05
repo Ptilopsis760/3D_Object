@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="MinSizeRel"/>
+		<BuildType Name="RelWithDebInfo"/>
+		<Platform Name="win32"/>
+	</Configurations>
+	<Project Path="src/OpenMesh/Apps/VDProgMesh/Analyzer/Analyzer.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="0b84165a-25bf-35fe-8d51-6bbeec6a6c10">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/Decimating/DecimaterGui/DecimaterGui.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="83aee34e-d6df-375a-a1d9-68814df0ec20">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/Dualizer/Dualizer.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="b8ab65c6-1840-38e6-a5bf-7fd6ee524294">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Core/OpenMeshCore.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="aefe1625-4f00-369e-a4c2-7584b53c0991">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Tools/OpenMeshTools.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="5c06c42b-6538-3783-89d9-b478f78d6295">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="PACKAGE_SOURCE.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="f0a5a558-62fb-3668-833e-6d331247166e">
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<Build Solution="Debug|*" Project="false"/>
+		<Build Solution="Release|*" Project="false"/>
+		<Build Solution="MinSizeRel|*" Project="false"/>
+		<Build Solution="RelWithDebInfo|*" Project="false"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/ProgViewer/ProgViewer.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="c53f0654-2bd7-3194-a204-cc120c30a605">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/QtViewer/QtViewer.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="3e39c283-41fd-3576-a15e-eb5665096217">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/Smoothing/Smoothing.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="c35c6bb4-a7da-391f-8960-ccfb6b1b7b9a">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="de8a8c01-71c8-32e0-9725-d6c720f9448b">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/VDProgMesh/Synthesizer/Synthesizer.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="7f32267a-db5b-31bf-9692-c60c2e12e38b">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/Subdivider/commandlineAdaptiveSubdivider/commandlineAdaptiveSubdivider.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="993998ac-161c-35f0-b910-abb6ddc0b050">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/Decimating/commandlineDecimater/commandlineDecimater.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="ccaee461-2738-3d08-bd3b-6e85edc2a729">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/Subdivider/commandlineSubdivider/commandlineSubdivider.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="b5661eb0-9908-327f-af6b-934eca3f17a5">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="fixbundle.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="b9a8364e-b652-3627-b872-e77a073b6326">
+		<BuildDependency Project="src/OpenMesh/Apps/VDProgMesh/Analyzer/Analyzer.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/Decimating/DecimaterGui/DecimaterGui.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/Dualizer/Dualizer.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/ProgViewer/ProgViewer.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/QtViewer/QtViewer.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/Smoothing/Smoothing.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/VDProgMesh/Synthesizer/Synthesizer.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/Subdivider/commandlineAdaptiveSubdivider/commandlineAdaptiveSubdivider.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/Decimating/commandlineDecimater/commandlineDecimater.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/Subdivider/commandlineSubdivider/commandlineSubdivider.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/mconvert/mconvert.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Apps/VDProgMesh/mkbalancedpm/mkbalancedpm.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/mconvert/mconvert.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="84177a3d-13aa-3f38-8e77-4bb074880333">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Project Path="src/OpenMesh/Apps/VDProgMesh/mkbalancedpm/mkbalancedpm.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="6a5f22fe-9b61-35d5-be46-e7238c6991bd">
+		<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+		<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+		<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+	</Project>
+	<Folder Name="/CMakePredefinedTargets/">
+		<Project Path="ALL_BUILD.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="b7566006-694d-3e0a-8db4-b15bde38abc1" DefaultStartup="true">
+			<BuildDependency Project="src/OpenMesh/Apps/VDProgMesh/Analyzer/Analyzer.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/Decimating/DecimaterGui/DecimaterGui.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/Dualizer/Dualizer.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Core/OpenMeshCore.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Tools/OpenMeshTools.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/ProgViewer/ProgViewer.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/QtViewer/QtViewer.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/Smoothing/Smoothing.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/VDProgMesh/Synthesizer/Synthesizer.vcxproj"/>
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/Subdivider/commandlineAdaptiveSubdivider/commandlineAdaptiveSubdivider.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/Decimating/commandlineDecimater/commandlineDecimater.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/Subdivider/commandlineSubdivider/commandlineSubdivider.vcxproj"/>
+			<BuildDependency Project="fixbundle.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/mconvert/mconvert.vcxproj"/>
+			<BuildDependency Project="src/OpenMesh/Apps/VDProgMesh/mkbalancedpm/mkbalancedpm.vcxproj"/>
+		</Project>
+		<Project Path="INSTALL.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="16899b0b-f654-3aee-9602-547e3db952dd">
+			<BuildDependency Project="ALL_BUILD.vcxproj"/>
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<Build Solution="Debug|*" Project="false"/>
+			<Build Solution="Release|*" Project="false"/>
+			<Build Solution="MinSizeRel|*" Project="false"/>
+			<Build Solution="RelWithDebInfo|*" Project="false"/>
+		</Project>
+		<Project Path="PACKAGE.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="77d4ef35-fe32-364c-926c-f6e78f45a984">
+			<BuildDependency Project="ALL_BUILD.vcxproj"/>
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<Build Solution="Debug|*" Project="false"/>
+			<Build Solution="Release|*" Project="false"/>
+			<Build Solution="MinSizeRel|*" Project="false"/>
+			<Build Solution="RelWithDebInfo|*" Project="false"/>
+		</Project>
+		<Project Path="RUN_TESTS.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="b5c2d542-6cfb-336e-9113-cb61e4181374">
+			<BuildDependency Project="ZERO_CHECK.vcxproj"/>
+			<Build Solution="Debug|*" Project="false"/>
+			<Build Solution="Release|*" Project="false"/>
+			<Build Solution="MinSizeRel|*" Project="false"/>
+			<Build Solution="RelWithDebInfo|*" Project="false"/>
+		</Project>
+		<Project Path="ZERO_CHECK.vcxproj" Type="8bc9ceb8-8b4a-11d0-8d11-00a0c91bc942" Id="511148f4-0f7f-3bcf-a5f4-187a58ae969b"/>
+	</Folder>
+</Solution>

@@ -1,0 +1,228 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen",
+	"CMAKE_BINARY_DIR" : "D:/CS/JAVA/3D_Object/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/Subdivider/SubdividerGui",
+	"CMAKE_EXECUTABLE" : "D:/VisualStudio18/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeLists.txt",
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/VCICommon.cmake",
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/MSVCMacros.cmake",
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/VCIPaths.cmake",
+		"D:/VisualStudio18/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.3/Modules/AddFileDependencies.cmake",
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/VCICompiler.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "D:/CS/JAVA/3D_Object/OpenMesh-11.0.0",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/QtViewer/MeshViewerWidgetT.hh",
+			"Mu",
+			"GGO57QWOH2/moc_MeshViewerWidgetT.cpp",
+			null
+		],
+		[
+			"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/QtViewer/MeshViewerWidgetT_impl.hh",
+			"Mu",
+			"GGO57QWOH2/moc_MeshViewerWidgetT_impl.cpp",
+			null
+		],
+		[
+			"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/QtViewer/QGLViewerWidget.hh",
+			"Mu",
+			"GGO57QWOH2/moc_QGLViewerWidget.cpp",
+			null
+		],
+		[
+			"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/Subdivider/MeshViewerWidget.hh",
+			"Mu",
+			"2YY4W4HOGS/moc_MeshViewerWidget.cpp",
+			null
+		],
+		[
+			"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/Subdivider/SubdivideWidget.hh",
+			"Mu",
+			"2YY4W4HOGS/moc_SubdivideWidget.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/include",
+	"INCLUDE_DIR_Debug" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/include_Release",
+	"MOC_COMPILATION_FILE" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/mocs_compilation.cpp",
+	"MOC_COMPILATION_FILE_Debug" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/mocs_compilation_Debug.cpp",
+	"MOC_COMPILATION_FILE_MinSizeRel" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/mocs_compilation_MinSizeRel.cpp",
+	"MOC_COMPILATION_FILE_RelWithDebInfo" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/mocs_compilation_RelWithDebInfo.cpp",
+	"MOC_COMPILATION_FILE_Release" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/SubdividerGui_autogen/mocs_compilation_Release.cpp",
+	"MOC_DEFINITIONS" : [],
+	"MOC_DEFINITIONS_Debug" : 
+	[
+		"INCLUDE_TEMPLATES",
+		"NOMINMAX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_OPENGL_LIB",
+		"QT_VERSION_MAJOR=5",
+		"QT_VERSION_MINOR=15",
+		"QT_VERSION_PATCH=2",
+		"QT_WIDGETS_LIB",
+		"WIN32",
+		"_CRT_SECURE_NO_WARNINGS",
+		"_USE_MATH_DEFINES"
+	],
+	"MOC_DEFINITIONS_MinSizeRel" : 
+	[
+		"INCLUDE_TEMPLATES",
+		"NOMINMAX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_OPENGL_LIB",
+		"QT_VERSION_MAJOR=5",
+		"QT_VERSION_MINOR=15",
+		"QT_VERSION_PATCH=2",
+		"QT_WIDGETS_LIB",
+		"WIN32",
+		"_CRT_SECURE_NO_WARNINGS",
+		"_USE_MATH_DEFINES"
+	],
+	"MOC_DEFINITIONS_RelWithDebInfo" : 
+	[
+		"INCLUDE_TEMPLATES",
+		"NOMINMAX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_OPENGL_LIB",
+		"QT_VERSION_MAJOR=5",
+		"QT_VERSION_MINOR=15",
+		"QT_VERSION_PATCH=2",
+		"QT_WIDGETS_LIB",
+		"WIN32",
+		"_CRT_SECURE_NO_WARNINGS",
+		"_USE_MATH_DEFINES"
+	],
+	"MOC_DEFINITIONS_Release" : 
+	[
+		"INCLUDE_TEMPLATES",
+		"NOMINMAX",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NO_DEBUG",
+		"QT_OPENGL_LIB",
+		"QT_VERSION_MAJOR=5",
+		"QT_VERSION_MINOR=15",
+		"QT_VERSION_PATCH=2",
+		"QT_WIDGETS_LIB",
+		"WIN32",
+		"_CRT_SECURE_NO_WARNINGS",
+		"_USE_MATH_DEFINES"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : [],
+	"MOC_INCLUDES_Debug" : 
+	[
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src",
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src",
+		"E:/anaconda3/Library/include/qt",
+		"E:/anaconda3/Library/include/qt/QtCore",
+		"E:/anaconda3/Library/mkspecs/win32-msvc",
+		"E:/anaconda3/Library/include/qt/QtWidgets",
+		"E:/anaconda3/Library/include/qt/QtGui",
+		"E:/anaconda3/Library/include/qt/QtANGLE",
+		"E:/anaconda3/Library/include/qt/QtOpenGL"
+	],
+	"MOC_INCLUDES_MinSizeRel" : 
+	[
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src",
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src",
+		"E:/anaconda3/Library/include/qt",
+		"E:/anaconda3/Library/include/qt/QtCore",
+		"E:/anaconda3/Library/mkspecs/win32-msvc",
+		"E:/anaconda3/Library/include/qt/QtWidgets",
+		"E:/anaconda3/Library/include/qt/QtGui",
+		"E:/anaconda3/Library/include/qt/QtANGLE",
+		"E:/anaconda3/Library/include/qt/QtOpenGL"
+	],
+	"MOC_INCLUDES_RelWithDebInfo" : 
+	[
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src",
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src",
+		"E:/anaconda3/Library/include/qt",
+		"E:/anaconda3/Library/include/qt/QtCore",
+		"E:/anaconda3/Library/mkspecs/win32-msvc",
+		"E:/anaconda3/Library/include/qt/QtWidgets",
+		"E:/anaconda3/Library/include/qt/QtGui",
+		"E:/anaconda3/Library/include/qt/QtANGLE",
+		"E:/anaconda3/Library/include/qt/QtOpenGL"
+	],
+	"MOC_INCLUDES_Release" : 
+	[
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src",
+		"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src",
+		"E:/anaconda3/Library/include/qt",
+		"E:/anaconda3/Library/include/qt/QtCore",
+		"E:/anaconda3/Library/mkspecs/win32-msvc",
+		"E:/anaconda3/Library/include/qt/QtWidgets",
+		"E:/anaconda3/Library/include/qt/QtGui",
+		"E:/anaconda3/Library/include/qt/QtANGLE",
+		"E:/anaconda3/Library/include/qt/QtOpenGL"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : true,
+	"PARALLEL" : 14,
+	"PARSE_CACHE_FILE" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE_Debug" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/ParseCache_Debug.txt",
+	"PARSE_CACHE_FILE_MinSizeRel" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/ParseCache_MinSizeRel.txt",
+	"PARSE_CACHE_FILE_RelWithDebInfo" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/ParseCache_RelWithDebInfo.txt",
+	"PARSE_CACHE_FILE_Release" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/ParseCache_Release.txt",
+	"QT_MOC_EXECUTABLE" : "E:/anaconda3/Library/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE_Debug" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/AutogenUsed_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/AutogenUsed_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/AutogenUsed_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/Subdivider/SubdividerGui/CMakeFiles/SubdividerGui_autogen.dir/AutogenUsed_Release.txt",
+	"SOURCES" : 
+	[
+		[
+			"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/QtViewer/QGLViewerWidget.cc",
+			"Mu",
+			null
+		],
+		[
+			"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/Subdivider/SubdivideWidget.cc",
+			"Mu",
+			null
+		],
+		[
+			"D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/Subdivider/qtsubdivider.cc",
+			"Mu",
+			null
+		]
+	],
+	"USE_BETTER_GRAPH" : false,
+	"VERBOSITY" : 0
+}

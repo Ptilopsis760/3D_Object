@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|win32">
+      <Configuration>Debug</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|win32">
+      <Configuration>Release</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7F32267A-DB5B-31BF-9692-C60C2E12E38B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>win32</Platform>
+    <ProjectName>Synthesizer</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v145</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Synthesizer.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Synthesizer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Synthesizer.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Synthesizer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Synthesizer.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Synthesizer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Synthesizer.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Synthesizer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_Debug;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "E:/anaconda3/Library/include/qt" /external:I "E:/anaconda3/Library/include/qt/QtCore" /external:I "E:/anaconda3/Library/./mkspecs/win32-msvc" /external:I "E:/anaconda3/Library/include/qt/QtWidgets" /external:I "E:/anaconda3/Library/include/qt/QtGui" /external:I "E:/anaconda3/Library/include/qt/QtANGLE" /external:I "E:/anaconda3/Library/include/qt/QtOpenGL" /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;QT_VERSION_MAJOR=5;QT_VERSION_MINOR=15;QT_VERSION_PATCH=2;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;QT_VERSION_MAJOR=5;QT_VERSION_MINOR=15;QT_VERSION_PATCH=2;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_Debug;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;E:\anaconda3\Library\include\qt;E:\anaconda3\Library\include\qt\QtCore;E:\anaconda3\Library\.\mkspecs\win32-msvc;E:\anaconda3\Library\include\qt\QtWidgets;E:\anaconda3\Library\include\qt\QtGui;E:\anaconda3\Library\include\qt\QtANGLE;E:\anaconda3\Library\include\qt\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_Debug;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;E:\anaconda3\Library\include\qt;E:\anaconda3\Library\include\qt\QtCore;E:\anaconda3\Library\.\mkspecs\win32-msvc;E:\anaconda3\Library\include\qt\QtWidgets;E:\anaconda3\Library\include\qt\QtGui;E:\anaconda3\Library\include\qt\QtANGLE;E:\anaconda3\Library\include\qt\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message>Automatic MOC for target Synthesizer</Message>
+      <Command>setlocal
+cd D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E cmake_autogen D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeFiles/Synthesizer_autogen.dir/AutogenInfo.json Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E copy_if_different D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/Debug/Synthesizer.exe D:/CS/JAVA/3D_Object/build/Build/./Synthesizer.exe
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\..\Core\Debug\OpenMeshCored.lib;..\..\..\Tools\Debug\OpenMeshToolsd.lib;E:\anaconda3\Library\lib\Qt5OpenGL_conda.lib;E:\anaconda3\Library\lib\Qt5Widgets_conda.lib;E:\anaconda3\Library\lib\Qt5Gui_conda.lib;opengl32.lib;glu32.lib;..\..\..\Core\Debug\OpenMeshCored.lib;E:\anaconda3\Library\lib\Qt5Core_conda.lib;E:\anaconda3\Library\lib\qtmain_conda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/Debug/Synthesizer.lib</ImportLibrary>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/Debug/Synthesizer.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_Release;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "E:/anaconda3/Library/include/qt" /external:I "E:/anaconda3/Library/include/qt/QtCore" /external:I "E:/anaconda3/Library/./mkspecs/win32-msvc" /external:I "E:/anaconda3/Library/include/qt/QtWidgets" /external:I "E:/anaconda3/Library/include/qt/QtGui" /external:I "E:/anaconda3/Library/include/qt/QtANGLE" /external:I "E:/anaconda3/Library/include/qt/QtOpenGL" /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_NO_DEBUG;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;QT_VERSION_MAJOR=5;QT_VERSION_MINOR=15;QT_VERSION_PATCH=2;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_NO_DEBUG;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;QT_VERSION_MAJOR=5;QT_VERSION_MINOR=15;QT_VERSION_PATCH=2;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_Release;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;E:\anaconda3\Library\include\qt;E:\anaconda3\Library\include\qt\QtCore;E:\anaconda3\Library\.\mkspecs\win32-msvc;E:\anaconda3\Library\include\qt\QtWidgets;E:\anaconda3\Library\include\qt\QtGui;E:\anaconda3\Library\include\qt\QtANGLE;E:\anaconda3\Library\include\qt\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_Release;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;E:\anaconda3\Library\include\qt;E:\anaconda3\Library\include\qt\QtCore;E:\anaconda3\Library\.\mkspecs\win32-msvc;E:\anaconda3\Library\include\qt\QtWidgets;E:\anaconda3\Library\include\qt\QtGui;E:\anaconda3\Library\include\qt\QtANGLE;E:\anaconda3\Library\include\qt\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message>Automatic MOC for target Synthesizer</Message>
+      <Command>setlocal
+cd D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E cmake_autogen D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeFiles/Synthesizer_autogen.dir/AutogenInfo.json Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E copy_if_different D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/Release/Synthesizer.exe D:/CS/JAVA/3D_Object/build/Build/./Synthesizer.exe
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\..\Core\Release\OpenMeshCore.lib;..\..\..\Tools\Release\OpenMeshTools.lib;E:\anaconda3\Library\lib\Qt5OpenGL_conda.lib;E:\anaconda3\Library\lib\Qt5Widgets_conda.lib;E:\anaconda3\Library\lib\Qt5Gui_conda.lib;opengl32.lib;glu32.lib;..\..\..\Core\Release\OpenMeshCore.lib;E:\anaconda3\Library\lib\Qt5Core_conda.lib;E:\anaconda3\Library\lib\qtmain_conda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/Release/Synthesizer.lib</ImportLibrary>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/Release/Synthesizer.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_MinSizeRel;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "E:/anaconda3/Library/include/qt" /external:I "E:/anaconda3/Library/include/qt/QtCore" /external:I "E:/anaconda3/Library/./mkspecs/win32-msvc" /external:I "E:/anaconda3/Library/include/qt/QtWidgets" /external:I "E:/anaconda3/Library/include/qt/QtGui" /external:I "E:/anaconda3/Library/include/qt/QtANGLE" /external:I "E:/anaconda3/Library/include/qt/QtOpenGL" /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;QT_VERSION_MAJOR=5;QT_VERSION_MINOR=15;QT_VERSION_PATCH=2;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;QT_VERSION_MAJOR=5;QT_VERSION_MINOR=15;QT_VERSION_PATCH=2;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;QT_NO_DEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_MinSizeRel;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;E:\anaconda3\Library\include\qt;E:\anaconda3\Library\include\qt\QtCore;E:\anaconda3\Library\.\mkspecs\win32-msvc;E:\anaconda3\Library\include\qt\QtWidgets;E:\anaconda3\Library\include\qt\QtGui;E:\anaconda3\Library\include\qt\QtANGLE;E:\anaconda3\Library\include\qt\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_MinSizeRel;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;E:\anaconda3\Library\include\qt;E:\anaconda3\Library\include\qt\QtCore;E:\anaconda3\Library\.\mkspecs\win32-msvc;E:\anaconda3\Library\include\qt\QtWidgets;E:\anaconda3\Library\include\qt\QtGui;E:\anaconda3\Library\include\qt\QtANGLE;E:\anaconda3\Library\include\qt\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message>Automatic MOC for target Synthesizer</Message>
+      <Command>setlocal
+cd D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E cmake_autogen D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeFiles/Synthesizer_autogen.dir/AutogenInfo.json MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E copy_if_different D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/MinSizeRel/Synthesizer.exe D:/CS/JAVA/3D_Object/build/Build/./Synthesizer.exe
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\..\Core\MinSizeRel\OpenMeshCore.lib;..\..\..\Tools\MinSizeRel\OpenMeshTools.lib;E:\anaconda3\Library\lib\Qt5OpenGL_conda.lib;E:\anaconda3\Library\lib\Qt5Widgets_conda.lib;E:\anaconda3\Library\lib\Qt5Gui_conda.lib;opengl32.lib;glu32.lib;..\..\..\Core\MinSizeRel\OpenMeshCore.lib;E:\anaconda3\Library\lib\Qt5Core_conda.lib;E:\anaconda3\Library\lib\qtmain_conda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/MinSizeRel/Synthesizer.lib</ImportLibrary>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/MinSizeRel/Synthesizer.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_RelWithDebInfo;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /external:I "E:/anaconda3/Library/include/qt" /external:I "E:/anaconda3/Library/include/qt/QtCore" /external:I "E:/anaconda3/Library/./mkspecs/win32-msvc" /external:I "E:/anaconda3/Library/include/qt/QtWidgets" /external:I "E:/anaconda3/Library/include/qt/QtGui" /external:I "E:/anaconda3/Library/include/qt/QtANGLE" /external:I "E:/anaconda3/Library/include/qt/QtOpenGL" /bigobj</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <BufferSecurityCheck></BufferSecurityCheck>
+      <CallingConvention></CallingConvention>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <FloatingPointModel></FloatingPointModel>
+      <ForceConformanceInForLoopScope></ForceConformanceInForLoopScope>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RemoveUnreferencedCodeData></RemoveUnreferencedCodeData>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <TreatWChar_tAsBuiltInType></TreatWChar_tAsBuiltInType>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_NO_DEBUG;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;QT_VERSION_MAJOR=5;QT_VERSION_MINOR=15;QT_VERSION_PATCH=2;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;QT_NO_DEBUG;INCLUDE_TEMPLATES;_USE_MATH_DEFINES;NOMINMAX;_CRT_SECURE_NO_WARNINGS;QT_VERSION_MAJOR=5;QT_VERSION_MINOR=15;QT_VERSION_PATCH=2;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_RelWithDebInfo;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;E:\anaconda3\Library\include\qt;E:\anaconda3\Library\include\qt\QtCore;E:\anaconda3\Library\.\mkspecs\win32-msvc;E:\anaconda3\Library\include\qt\QtWidgets;E:\anaconda3\Library\include\qt\QtGui;E:\anaconda3\Library\include\qt\QtANGLE;E:\anaconda3\Library\include\qt\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\include_RelWithDebInfo;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Core\..\..;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Tools\..\..;E:\anaconda3\Library\include\qt;E:\anaconda3\Library\include\qt\QtCore;E:\anaconda3\Library\.\mkspecs\win32-msvc;E:\anaconda3\Library\include\qt\QtWidgets;E:\anaconda3\Library\include\qt\QtGui;E:\anaconda3\Library\include\qt\QtANGLE;E:\anaconda3\Library\include\qt\QtOpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PreBuildEvent>
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message>Automatic MOC for target Synthesizer</Message>
+      <Command>setlocal
+cd D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E cmake_autogen D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeFiles/Synthesizer_autogen.dir/AutogenInfo.json RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E copy_if_different D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/RelWithDebInfo/Synthesizer.exe D:/CS/JAVA/3D_Object/build/Build/./Synthesizer.exe
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>..\..\..\Core\RelWithDebInfo\OpenMeshCore.lib;..\..\..\Tools\RelWithDebInfo\OpenMeshTools.lib;E:\anaconda3\Library\lib\Qt5OpenGL_conda.lib;E:\anaconda3\Library\lib\Qt5Widgets_conda.lib;E:\anaconda3\Library\lib\Qt5Gui_conda.lib;opengl32.lib;glu32.lib;..\..\..\Core\RelWithDebInfo\OpenMeshCore.lib;E:\anaconda3\Library\lib\Qt5Core_conda.lib;E:\anaconda3\Library\lib\qtmain_conda.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
+      <DataExecutionPrevention></DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers></ImageHasSafeExceptionHandlers>
+      <ImportLibrary>D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/RelWithDebInfo/Synthesizer.lib</ImportLibrary>
+      <LargeAddressAware>true</LargeAddressAware>
+      <LinkErrorReporting></LinkErrorReporting>
+      <ProgramDataBaseFile>D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/RelWithDebInfo/Synthesizer.pdb</ProgramDataBaseFile>
+      <RandomizedBaseAddress></RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Apps\VDProgMesh\Synthesizer\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/CS/JAVA/3D_Object/OpenMesh-11.0.0 -BD:/CS/JAVA/3D_Object/build --check-stamp-file D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\MSVCMacros.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCICommon.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCICompiler.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCIPaths.cmake;D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.3\Modules\AddFileDependencies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/CS/JAVA/3D_Object/OpenMesh-11.0.0 -BD:/CS/JAVA/3D_Object/build --check-stamp-file D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\MSVCMacros.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCICommon.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCICompiler.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCIPaths.cmake;D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.3\Modules\AddFileDependencies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Building Custom Rule D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/CS/JAVA/3D_Object/OpenMesh-11.0.0 -BD:/CS/JAVA/3D_Object/build --check-stamp-file D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\MSVCMacros.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCICommon.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCICompiler.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCIPaths.cmake;D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.3\Modules\AddFileDependencies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Building Custom Rule D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
+D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -SD:/CS/JAVA/3D_Object/OpenMesh-11.0.0 -BD:/CS/JAVA/3D_Object/build --check-stamp-file D:/CS/JAVA/3D_Object/build/src/OpenMesh/Apps/VDProgMesh/Synthesizer/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\MSVCMacros.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCICommon.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCICompiler.cmake;D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\cmake-library\VCI\VCIPaths.cmake;D:\VisualStudio18\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-4.3\Modules\AddFileDependencies.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\mocs_compilation_Debug.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Apps\QtViewer\QGLViewerWidget.cc" />
+    <ClCompile Include="D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Apps\VDProgMesh\Synthesizer\vdpmsynthesizer.cc" />
+    <ClCompile Include="D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Apps\VDProgMesh\Synthesizer\VDPMSynthesizerViewerWidget.cc" />
+    <ClInclude Include="D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\src\OpenMesh\Apps\VDProgMesh\Synthesizer\VDPMSynthesizerViewerWidget.hh" />
+    <ClCompile Include="D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\mocs_compilation_Release.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\mocs_compilation_MinSizeRel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="D:\CS\JAVA\3D_Object\build\src\OpenMesh\Apps\VDProgMesh\Synthesizer\Synthesizer_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">true</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="D:\CS\JAVA\3D_Object\build\ZERO_CHECK.vcxproj">
+      <Project>{511148F4-0F7F-3BCF-A5F4-187A58AE969B}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="D:\CS\JAVA\3D_Object\build\src\OpenMesh\Core\OpenMeshCore.vcxproj">
+      <Project>{AEFE1625-4F00-369E-A4C2-7584B53C0991}</Project>
+      <Name>OpenMeshCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\CS\JAVA\3D_Object\build\src\OpenMesh\Tools\OpenMeshTools.vcxproj">
+      <Project>{5C06C42B-6538-3783-89D9-B478F78D6295}</Project>
+      <Name>OpenMeshTools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

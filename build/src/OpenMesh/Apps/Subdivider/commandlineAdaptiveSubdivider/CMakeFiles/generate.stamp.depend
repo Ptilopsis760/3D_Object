@@ -1,0 +1,7 @@
+# CMake generation dependency list for this directory.
+D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/MSVCMacros.cmake
+D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/VCICommon.cmake
+D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/VCICompiler.cmake
+D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/VCIPaths.cmake
+D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/src/OpenMesh/Apps/Subdivider/commandlineAdaptiveSubdivider/CMakeLists.txt
+D:/VisualStudio18/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.3/Modules/AddFileDependencies.cmake

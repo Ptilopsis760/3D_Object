@@ -1,0 +1,15 @@
+com\placement3d\model\Matrix3x3Test.class
+com\placement3d\geometry\BoundingBoxTest.class
+com\placement3d\io\STLParserTest.class
+com\placement3d\model\MeshTest$CentroidTests.class
+com\placement3d\model\MeshTest$BoundingBoxTests.class
+com\placement3d\model\Vector3DTest.class
+com\placement3d\model\MeshTest$EqualsHashCodeTests.class
+com\placement3d\model\MeshTest$TransformationTests.class
+com\placement3d\model\MeshTest$ToStringTests.class
+com\placement3d\model\MeshTest$ConstructorTests.class
+com\placement3d\model\MeshTest$VolumeTests.class
+com\placement3d\model\ModelInfoTest.class
+com\placement3d\model\TriangleTest.class
+com\placement3d\model\MeshTest.class
+com\placement3d\model\MeshTest$GetterTests.class

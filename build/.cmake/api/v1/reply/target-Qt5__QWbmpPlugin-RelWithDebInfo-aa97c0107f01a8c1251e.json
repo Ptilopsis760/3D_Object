@@ -1,0 +1,104 @@
+{
+	"abstract" : true,
+	"artifacts" : 
+	[
+		{
+			"path" : "E:/anaconda3/Library/plugins/imageformats/qwbmp.dll"
+		}
+	],
+	"backtrace" : 10,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"include",
+			"find_package",
+			"vci_qt"
+		],
+		"files" : 
+		[
+			"E:/anaconda3/Library/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+			"E:/anaconda3/Library/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+			"E:/anaconda3/Library/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+			"E:/anaconda3/Library/lib/cmake/Qt5/Qt5Config.cmake",
+			"cmake-library/VCI/VCIQt.cmake",
+			"src/OpenMesh/Apps/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 5
+			},
+			{
+				"command" : 3,
+				"file" : 5,
+				"line" : 47,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 4,
+				"line" : 71,
+				"parent" : 1
+			},
+			{
+				"file" : 3,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 28,
+				"parent" : 3
+			},
+			{
+				"file" : 2,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 106,
+				"parent" : 5
+			},
+			{
+				"file" : 1,
+				"parent" : 6
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 241,
+				"parent" : 7
+			},
+			{
+				"file" : 0,
+				"parent" : 8
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2,
+				"parent" : 9
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"id" : "Qt5::QWbmpPlugin::@ff45d7d2a3056dd2ca0d",
+	"imported" : true,
+	"local" : true,
+	"name" : "Qt5::QWbmpPlugin",
+	"nameOnDisk" : "qwbmp.dll",
+	"paths" : 
+	{
+		"build" : "src/OpenMesh/Apps",
+		"source" : "src/OpenMesh/Apps"
+	},
+	"sources" : [],
+	"type" : "MODULE_LIBRARY"
+}

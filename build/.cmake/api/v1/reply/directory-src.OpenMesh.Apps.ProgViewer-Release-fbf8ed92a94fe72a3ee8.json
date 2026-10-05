@@ -1,0 +1,69 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"vci_add_executable"
+		],
+		"files" : 
+		[
+			"cmake-library/VCI/VCICommon.cmake",
+			"src/OpenMesh/Apps/ProgViewer/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 226,
+				"parent" : 1
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : ".",
+			"paths" : 
+			[
+				"src/OpenMesh/Apps/ProgViewer/Release/ProgViewer.exe"
+			],
+			"targetId" : "ProgViewer::@9b54d794428931df2b57",
+			"targetIndex" : 7,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"cxxModuleBmiTarget" : 
+			{
+				"id" : "ProgViewer::@9b54d794428931df2b57",
+				"index" : 7
+			},
+			"destination" : ".",
+			"type" : "cxxModuleBmi"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "src/OpenMesh/Apps/ProgViewer",
+		"source" : "src/OpenMesh/Apps/ProgViewer"
+	}
+}

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\CS\JAVA\3D_Object\build\CMakeFiles\72ef59878e76c617c5401595dd6f5fc2\PACKAGE_SOURCE.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\CS\JAVA\3D_Object\OpenMesh-11.0.0\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\CS\JAVA\3D_Object\build\CMakeFiles\PACKAGE_SOURCE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{563C741E-2BD5-38BB-8C74-D832452F86AC}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

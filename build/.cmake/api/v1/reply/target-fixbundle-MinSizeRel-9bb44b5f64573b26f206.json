@@ -1,0 +1,237 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"src/OpenMesh/Tools/CMakeLists.txt",
+			"src/OpenMesh/Core/CMakeLists.txt",
+			"src/OpenMesh/Apps/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 92,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 144,
+				"parent" : 2
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 2,
+				"line" : 176,
+				"parent" : 4
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 1,
+				"file" : 3,
+				"line" : 28,
+				"parent" : 6
+			},
+			{
+				"command" : 1,
+				"file" : 3,
+				"line" : 69,
+				"parent" : 6
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "OpenMeshTools::@846f01b04ebc129b05da"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "OpenMeshCore::@82f3b4d12e3268291f62"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "commandlineAdaptiveSubdivider::@df5da50b4158fd8eba50"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "Dualizer::@d1093194882d305ec9b2"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "commandlineSubdivider::@0a3eaaaf2c7cb65860d7"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "Smoothing::@509c5d2bb07f7a358715"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "commandlineDecimater::@23a595d4c36f61f2698a"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "Analyzer::@c5d124fa4f804af8d5ae"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "mkbalancedpm::@c2228c32e262bf42456c"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "DecimaterGui::@3e83eaf928f9ada68b6b"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "mconvert::@688ffbe6e35810d83845"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "SubdividerGui::@df7a12aa27f8b6c84507"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "ProgViewer::@9b54d794428931df2b57"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "QtViewer::@ce6d89d7f1135c5913ad"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "Synthesizer::@b397f5b9eaafba292e5f"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "fixbundle::@6890427a1f51a3e7e1df",
+	"name" : "fixbundle",
+	"orderDependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "OpenMeshTools::@846f01b04ebc129b05da"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "OpenMeshCore::@82f3b4d12e3268291f62"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "commandlineAdaptiveSubdivider::@df5da50b4158fd8eba50"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "Dualizer::@d1093194882d305ec9b2"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "commandlineSubdivider::@0a3eaaaf2c7cb65860d7"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "Smoothing::@509c5d2bb07f7a358715"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "commandlineDecimater::@23a595d4c36f61f2698a"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "Analyzer::@c5d124fa4f804af8d5ae"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "mkbalancedpm::@c2228c32e262bf42456c"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "DecimaterGui::@3e83eaf928f9ada68b6b"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "mconvert::@688ffbe6e35810d83845"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "SubdividerGui::@df7a12aa27f8b6c84507"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "ProgViewer::@9b54d794428931df2b57"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "QtViewer::@ce6d89d7f1135c5913ad"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "Synthesizer::@b397f5b9eaafba292e5f"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "D:/CS/JAVA/3D_Object/build/CMakeFiles/fixbundle",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "D:/CS/JAVA/3D_Object/build/CMakeFiles/72ef59878e76c617c5401595dd6f5fc2/fixbundle.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

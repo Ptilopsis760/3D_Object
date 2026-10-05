@@ -1,0 +1,69 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install",
+			"vci_add_executable"
+		],
+		"files" : 
+		[
+			"cmake-library/VCI/VCICommon.cmake",
+			"src/OpenMesh/Apps/Subdivider/commandlineSubdivider/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 3,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 226,
+				"parent" : 1
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : ".",
+			"paths" : 
+			[
+				"src/OpenMesh/Apps/Subdivider/commandlineSubdivider/MinSizeRel/commandlineSubdivider.exe"
+			],
+			"targetId" : "commandlineSubdivider::@0a3eaaaf2c7cb65860d7",
+			"targetIndex" : 15,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"cxxModuleBmiTarget" : 
+			{
+				"id" : "commandlineSubdivider::@0a3eaaaf2c7cb65860d7",
+				"index" : 15
+			},
+			"destination" : ".",
+			"type" : "cxxModuleBmi"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "src/OpenMesh/Apps/Subdivider/commandlineSubdivider",
+		"source" : "src/OpenMesh/Apps/Subdivider/commandlineSubdivider"
+	}
+}

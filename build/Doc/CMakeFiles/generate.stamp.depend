@@ -1,0 +1,6 @@
+# CMake generation dependency list for this directory.
+D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/Doc/CMakeLists.txt
+D:/CS/JAVA/3D_Object/OpenMesh-11.0.0/cmake-library/VCI/VCIDoxygen.cmake
+D:/VisualStudio18/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.3/Modules/FindDoxygen.cmake
+D:/VisualStudio18/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.3/Modules/FindPackageHandleStandardArgs.cmake
+D:/VisualStudio18/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.3/Modules/FindPackageMessage.cmake

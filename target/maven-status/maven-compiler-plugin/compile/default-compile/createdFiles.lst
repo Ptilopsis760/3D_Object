@@ -1,0 +1,7 @@
+com\placement3d\model\Triangle.class
+com\placement3d\model\Vector3D.class
+com\placement3d\io\STLParser.class
+com\placement3d\geometry\BoundingBox.class
+com\placement3d\model\ModelInfo.class
+com\placement3d\model\Mesh.class
+com\placement3d\model\Matrix3x3.class

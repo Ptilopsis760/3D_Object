@@ -1,0 +1,141 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 10
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "OpenMeshTools::@846f01b04ebc129b05da"
+		},
+		{
+			"id" : "fixbundle::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "OpenMeshCore::@82f3b4d12e3268291f62"
+		},
+		{
+			"id" : "commandlineAdaptiveSubdivider::@df5da50b4158fd8eba50"
+		},
+		{
+			"id" : "Dualizer::@d1093194882d305ec9b2"
+		},
+		{
+			"id" : "commandlineSubdivider::@0a3eaaaf2c7cb65860d7"
+		},
+		{
+			"id" : "Smoothing::@509c5d2bb07f7a358715"
+		},
+		{
+			"id" : "commandlineDecimater::@23a595d4c36f61f2698a"
+		},
+		{
+			"id" : "Analyzer::@c5d124fa4f804af8d5ae"
+		},
+		{
+			"id" : "mkbalancedpm::@c2228c32e262bf42456c"
+		},
+		{
+			"id" : "DecimaterGui::@3e83eaf928f9ada68b6b"
+		},
+		{
+			"id" : "mconvert::@688ffbe6e35810d83845"
+		},
+		{
+			"id" : "SubdividerGui::@df7a12aa27f8b6c84507"
+		},
+		{
+			"id" : "ProgViewer::@9b54d794428931df2b57"
+		},
+		{
+			"id" : "QtViewer::@ce6d89d7f1135c5913ad"
+		},
+		{
+			"id" : "Synthesizer::@b397f5b9eaafba292e5f"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"orderDependencies" : 
+	[
+		{
+			"id" : "OpenMeshTools::@846f01b04ebc129b05da"
+		},
+		{
+			"id" : "fixbundle::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "OpenMeshCore::@82f3b4d12e3268291f62"
+		},
+		{
+			"id" : "commandlineAdaptiveSubdivider::@df5da50b4158fd8eba50"
+		},
+		{
+			"id" : "Dualizer::@d1093194882d305ec9b2"
+		},
+		{
+			"id" : "commandlineSubdivider::@0a3eaaaf2c7cb65860d7"
+		},
+		{
+			"id" : "Smoothing::@509c5d2bb07f7a358715"
+		},
+		{
+			"id" : "commandlineDecimater::@23a595d4c36f61f2698a"
+		},
+		{
+			"id" : "Analyzer::@c5d124fa4f804af8d5ae"
+		},
+		{
+			"id" : "mkbalancedpm::@c2228c32e262bf42456c"
+		},
+		{
+			"id" : "DecimaterGui::@3e83eaf928f9ada68b6b"
+		},
+		{
+			"id" : "mconvert::@688ffbe6e35810d83845"
+		},
+		{
+			"id" : "SubdividerGui::@df7a12aa27f8b6c84507"
+		},
+		{
+			"id" : "ProgViewer::@9b54d794428931df2b57"
+		},
+		{
+			"id" : "QtViewer::@ce6d89d7f1135c5913ad"
+		},
+		{
+			"id" : "Synthesizer::@b397f5b9eaafba292e5f"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
