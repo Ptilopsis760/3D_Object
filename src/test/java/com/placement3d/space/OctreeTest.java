@@ -503,42 +503,53 @@ class OctreeTest {
     /**
      * 辅助方法：创建测试用的PlacedModel。
      *
-     * <p>确保最小尺寸至少为1mm，避免创建退化三角形。</p>
+     * <p>构建一个顶点从(0,0,0)到(dx,dy,dz)的完整封闭立方体网格（12个三角形），
+     * 质心固定在(dx/2, dy/2, dz/2)，然后以目标AABB中心为position放置，
+     * 使transformedAABB精确落在(minX,minY,minZ)~(maxX,maxY,maxZ)。
+     * 原先只用一个三角形的退化夹具会导致质心退化到原点、z厚度为0，
+     * 导致AABB偏移错误，大量insert超出工作空间边界而失败。</p>
      */
     private PlacedModel createModel(String id, float minX, float minY, float minZ,
                                      float maxX, float maxY, float maxZ) {
-        // 确保最小尺寸（避免退化三角形）
         float dx = Math.max(maxX - minX, 1.0f);
         float dy = Math.max(maxY - minY, 1.0f);
         float dz = Math.max(maxZ - minZ, 1.0f);
 
-        // 调整maxX/maxY/maxZ确保非零体积
-        maxX = minX + dx;
-        maxY = minY + dy;
-        maxZ = minZ + dz;
-
-        BoundingBox bbox = new BoundingBox(
-            new Vector3D(minX, minY, minZ),
-            new Vector3D(maxX, maxY, maxZ)
-        );
-
-        // 创建有效的三角形网格（使用调整后的坐标）
-        Vector3D v1 = new Vector3D(minX, minY, minZ);
-        Vector3D v2 = new Vector3D(maxX, minY, minZ);
-        Vector3D v3 = new Vector3D(minX, maxY, minZ);
-        Triangle triangle = new Triangle(v1, v2, v3);
+        // 原点对齐的完整立方体（12个三角形，质心 = (dx/2, dy/2, dz/2)）
+        Vector3D v000 = new Vector3D(0,  0,  0);
+        Vector3D v100 = new Vector3D(dx, 0,  0);
+        Vector3D v110 = new Vector3D(dx, dy, 0);
+        Vector3D v010 = new Vector3D(0,  dy, 0);
+        Vector3D v001 = new Vector3D(0,  0,  dz);
+        Vector3D v101 = new Vector3D(dx, 0,  dz);
+        Vector3D v111 = new Vector3D(dx, dy, dz);
+        Vector3D v011 = new Vector3D(0,  dy, dz);
 
         List<Triangle> triangles = new java.util.ArrayList<>();
-        triangles.add(triangle);
+        // 底面
+        triangles.add(new Triangle(v000, v100, v110));
+        triangles.add(new Triangle(v000, v110, v010));
+        // 顶面
+        triangles.add(new Triangle(v001, v111, v101));
+        triangles.add(new Triangle(v001, v011, v111));
+        // 前面
+        triangles.add(new Triangle(v000, v101, v100));
+        triangles.add(new Triangle(v000, v001, v101));
+        // 后面
+        triangles.add(new Triangle(v010, v110, v111));
+        triangles.add(new Triangle(v010, v111, v011));
+        // 左面
+        triangles.add(new Triangle(v000, v010, v011));
+        triangles.add(new Triangle(v000, v011, v001));
+        // 右面
+        triangles.add(new Triangle(v100, v111, v110));
+        triangles.add(new Triangle(v100, v101, v111));
 
         Mesh mesh = new Mesh(triangles, id + ".stl");
+        ModelInfo modelInfo = new ModelInfo(id + ".stl", mesh, 0);
 
-        ModelInfo modelInfo = new ModelInfo(
-            id + ".stl",
-            mesh,
-            0  // modelId
-        );
-
-        return PlacedModel.create(modelInfo, Matrix3x3.IDENTITY, bbox.getCenter());
+        // 目标AABB中心作为position，使transformedAABB = (minX..maxX, minY..maxY, minZ..maxZ)
+        Vector3D center = new Vector3D(minX + dx / 2f, minY + dy / 2f, minZ + dz / 2f);
+        return PlacedModel.create(modelInfo, Matrix3x3.IDENTITY, center);
     }
 }

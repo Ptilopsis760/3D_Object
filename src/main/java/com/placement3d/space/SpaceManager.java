@@ -121,7 +121,10 @@ public class SpaceManager {
         }
 
         // 2. 查询可能碰撞的候选模型
-        List<PlacedModel> candidates = octree.queryCandidates(model);
+        // 必须用外扩 minGap 后的 AABB 查询，否则距离在 0~minGap 之间的模型
+        // 不会被八叉树返回，间隙约束形同虚设。
+        BoundingBox expandedAABB = model.getTransformedAABB().expand(minGap);
+        List<PlacedModel> candidates = octree.query(expandedAABB);
 
         // 3. 对每个候选进行精确碰撞检测
         for (PlacedModel candidate : candidates) {
@@ -168,8 +171,8 @@ public class SpaceManager {
         // 添加到列表
         placedModels.add(model);
 
-        // 更新已占用体积
-        occupiedVolume += model.getVolume();
+        // 更新已占用体积（按 AABB 体积计，与利用率口径一致）
+        occupiedVolume += model.getTransformedAABB().getVolume();
     }
 
     /**
@@ -196,8 +199,8 @@ public class SpaceManager {
             // 从八叉树中移除
             octree.remove(model);
 
-            // 更新已占用体积
-            occupiedVolume -= model.getVolume();
+            // 更新已占用体积（按 AABB 体积计，与 place 和利用率口径一致）
+            occupiedVolume -= model.getTransformedAABB().getVolume();
 
             return true;
         }
@@ -222,15 +225,13 @@ public class SpaceManager {
     }
 
     /**
-     * 获取空间利用率。
+     * 获取空间利用率（按 AABB 体积口径）。
      *
-     * <p>计算公式：利用率 = 已占用体积 / 工作空间体积</p>
+     * <p>计算公式：利用率 = 已摆放模型 AABB 体积之和 / 工作空间体积</p>
      *
-     * <p><b>性能目标：</b></p>
-     * <ul>
-     *   <li>简单模型：≥78%</li>
-     *   <li>复杂模型：≥75%</li>
-     * </ul>
+     * <p><b>口径说明：</b>经与老师确认（2026-11-06），利用率按包围盒（AABB）体积计算，
+     * 不按真实体积。目标值参考行业均值：纯 AABB 碰撞 ≥ 55%，体素碰撞 ≥ 65%。
+     * 原"78-85%"目标系真实体积口径下的旧指标，已作废。</p>
      *
      * @return 利用率（0.0 到 1.0之间）
      */
@@ -333,10 +334,10 @@ public class SpaceManager {
             return false;
         }
 
-        // 检查体积一致性
+        // 检查体积一致性（按 AABB 体积口径）
         float actualVolume = 0.0f;
         for (PlacedModel model : placedModels) {
-            actualVolume += model.getVolume();
+            actualVolume += model.getTransformedAABB().getVolume();
         }
 
         // 使用浮点数比较容差

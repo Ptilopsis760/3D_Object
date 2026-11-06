@@ -125,6 +125,53 @@ public final class Matrix3x3 {
     }
 
     /**
+     * Returns all 24 axis-aligned rotation matrices (the rotation group O).
+     *
+     * <p>These correspond to the 24 distinct orientations of a cube:
+     * 6 face-up directions × 4 rotations around that face's normal axis.
+     * They are the only orthogonal matrices with integer entries and determinant +1.</p>
+     *
+     * <p>Using this set in the greedy/annealing phase ensures every axis-aligned
+     * orientation of a model is tried without redundancy. The order is deterministic
+     * so that the same index always refers to the same orientation.</p>
+     *
+     * <p>Parameterisation (face = which axis points +Z after rotation):</p>
+     * <pre>
+     * Indices  0– 3 : +Z face up  (original orientation, Z-only spins)
+     * Indices  4– 7 : −Z face up  (flipped 180° around X)
+     * Indices  8–11 : +X face up  (rotated −90° around Y)
+     * Indices 12–15 : −X face up  (rotated +90° around Y)
+     * Indices 16–19 : +Y face up  (rotated +90° around X)
+     * Indices 20–23 : −Y face up  (rotated −90° around X)
+     * </pre>
+     *
+     * @return unmodifiable array of 24 distinct rotation matrices
+     */
+    public static Matrix3x3[] allAxisAlignedRotations() {
+        // 4 spin angles around the chosen "up" axis
+        double[] spins = {0.0, 90.0, 180.0, 270.0};
+
+        // 6 base orientations that bring a different face to +Z
+        Matrix3x3[] bases = {
+            identity(),                       //  +Z up : identity
+            rotationX(180.0),                 //  −Z up : flip around X
+            rotationY(-90.0),                 //  +X up : tilt +X → +Z
+            rotationY(90.0),                  //  −X up : tilt −X → +Z
+            rotationX(90.0),                  //  +Y up : tilt +Y → +Z
+            rotationX(-90.0)                  //  −Y up : tilt −Y → +Z
+        };
+
+        Matrix3x3[] result = new Matrix3x3[24];
+        for (int face = 0; face < bases.length; face++) {
+            for (int spin = 0; spin < spins.length; spin++) {
+                // Apply spin around the new Z axis, then the face base
+                result[face * 4 + spin] = bases[face].multiply(rotationZ(spins[spin]));
+            }
+        }
+        return result;
+    }
+
+    /**
      * Gets a matrix element at the specified position.
      *
      * @param row the row index (0-2)

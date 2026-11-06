@@ -1,0 +1,555 @@
+package com.placement3d.space;
+
+import com.placement3d.geometry.BoundingBox;
+import com.placement3d.model.Vector3D;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * CollisionDetector类的单元测试。
+ *
+ * <p>测试覆盖范围：</p>
+ * <ul>
+ *   <li>碰撞检测（AABB分离轴测试）</li>
+ *   <li>间隙约束检测</li>
+ *   <li>工作空间边界检测</li>
+ *   <li>最小距离计算</li>
+ *   <li>边界情况和异常处理</li>
+ * </ul>
+ *
+ * @author 3D Placement System Team - Algorithm Side
+ * @version 1.0.0
+ */
+@DisplayName("CollisionDetector 碰撞检测器测试")
+class CollisionDetectorTest {
+
+    private static final float STANDARD_GAP = 5.0f;
+    private static final float TOLERANCE = 1e-5f;
+
+    @Nested
+    @DisplayName("checkCollision() - 碰撞检测测试")
+    class CheckCollisionTests {
+
+        @Test
+        @DisplayName("完全分离且满足间隙约束 - 应返回false")
+        void testFullySeparatedWithSufficientGap() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(20, 0, 0),  // X轴距离10mm
+                new Vector3D(30, 10, 10)
+            );
+
+            assertFalse(CollisionDetector.checkCollision(box1, box2, STANDARD_GAP),
+                "完全分离且间隙充足时不应检测到碰撞");
+        }
+
+        @Test
+        @DisplayName("分离但违反间隙约束 - 应返回true")
+        void testSeparatedButViolatesGap() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(12, 0, 0),  // X轴距离仅2mm < 5mm
+                new Vector3D(22, 10, 10)
+            );
+
+            assertTrue(CollisionDetector.checkCollision(box1, box2, STANDARD_GAP),
+                "间隙不足时应检测到碰撞");
+        }
+
+        @Test
+        @DisplayName("AABB直接相交 - 应返回true")
+        void testDirectIntersection() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(5, 5, 5),  // 部分重叠
+                new Vector3D(15, 15, 15)
+            );
+
+            assertTrue(CollisionDetector.checkCollision(box1, box2, STANDARD_GAP),
+                "AABB相交时应检测到碰撞");
+        }
+
+        @Test
+        @DisplayName("完全包含 - 应返回true")
+        void testCompleteContainment() {
+            BoundingBox outerBox = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(100, 100, 100)
+            );
+            BoundingBox innerBox = new BoundingBox(
+                new Vector3D(40, 40, 40),
+                new Vector3D(60, 60, 60)
+            );
+
+            assertTrue(CollisionDetector.checkCollision(outerBox, innerBox, STANDARD_GAP),
+                "一个包围盒完全包含另一个时应检测到碰撞");
+        }
+
+        @Test
+        @DisplayName("边界接触（零距离） - 应返回true")
+        void testBoundaryContact() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(10, 0, 0),  // 紧贴边界，距离0mm
+                new Vector3D(20, 10, 10)
+            );
+
+            assertTrue(CollisionDetector.checkCollision(box1, box2, STANDARD_GAP),
+                "边界接触时应违反间隙约束");
+        }
+
+        @Test
+        @DisplayName("恰好满足间隙约束（边界情况） - 应返回false")
+        void testExactlyAtGapThreshold() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(15, 0, 0),  // X轴距离恰好5mm
+                new Vector3D(25, 10, 10)
+            );
+
+            assertFalse(CollisionDetector.checkCollision(box1, box2, STANDARD_GAP),
+                "恰好满足间隙约束时不应检测到碰撞");
+        }
+
+        @Test
+        @DisplayName("Y轴分离且满足间隙 - 应返回false")
+        void testSeparatedOnYAxis() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(0, 20, 0),  // Y轴距离10mm
+                new Vector3D(10, 30, 10)
+            );
+
+            assertFalse(CollisionDetector.checkCollision(box1, box2, STANDARD_GAP),
+                "Y轴分离且满足间隙时不应检测到碰撞");
+        }
+
+        @Test
+        @DisplayName("Z轴分离但违反间隙 - 应返回true")
+        void testSeparatedOnZAxisButViolatesGap() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(0, 0, 13),  // Z轴距离仅3mm < 5mm
+                new Vector3D(10, 10, 23)
+            );
+
+            assertTrue(CollisionDetector.checkCollision(box1, box2, STANDARD_GAP),
+                "Z轴分离但违反间隙时应检测到碰撞");
+        }
+
+        @Test
+        @DisplayName("对角线分离且满足间隙 - 应返回false")
+        void testDiagonallySeparatedWithSufficientGap() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(20, 20, 20),  // 对角线远离
+                new Vector3D(30, 30, 30)
+            );
+
+            assertFalse(CollisionDetector.checkCollision(box1, box2, STANDARD_GAP),
+                "对角线分离且间隙充足时不应检测到碰撞");
+        }
+
+        @Test
+        @DisplayName("零间隙约束（允许接触） - 接触时应返回false")
+        void testZeroGapAllowsContact() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(10, 0, 0),  // 紧贴边界
+                new Vector3D(20, 10, 10)
+            );
+
+            assertFalse(CollisionDetector.checkCollision(box1, box2, 0.0f),
+                "零间隙约束时接触应被允许");
+        }
+
+        @Test
+        @DisplayName("第一个包围盒为null - 应抛出NullPointerException")
+        void testFirstBoxNull() {
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+
+            assertThrows(NullPointerException.class,
+                () -> CollisionDetector.checkCollision(null, box2, STANDARD_GAP),
+                "第一个包围盒为null时应抛出异常");
+        }
+
+        @Test
+        @DisplayName("第二个包围盒为null - 应抛出NullPointerException")
+        void testSecondBoxNull() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+
+            assertThrows(NullPointerException.class,
+                () -> CollisionDetector.checkCollision(box1, null, STANDARD_GAP),
+                "第二个包围盒为null时应抛出异常");
+        }
+
+        @Test
+        @DisplayName("负数间隙值 - 应抛出IllegalArgumentException")
+        void testNegativeGap() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(20, 0, 0),
+                new Vector3D(30, 10, 10)
+            );
+
+            assertThrows(IllegalArgumentException.class,
+                () -> CollisionDetector.checkCollision(box1, box2, -5.0f),
+                "负数间隙值应抛出异常");
+        }
+    }
+
+    @Nested
+    @DisplayName("checkWorkspaceBoundary() - 工作空间边界检测测试")
+    class CheckWorkspaceBoundaryTests {
+
+        private final BoundingBox workspace = new BoundingBox(
+            new Vector3D(0, 0, 0),
+            new Vector3D(4000, 2500, 1500)  // 典型打印平台尺寸
+        );
+
+        @Test
+        @DisplayName("模型完全在工作空间内且满足边界间隙 - 应返回false")
+        void testModelSafelyInsideWorkspace() {
+            BoundingBox model = new BoundingBox(
+                new Vector3D(100, 100, 100),
+                new Vector3D(200, 200, 200)
+            );
+
+            assertFalse(CollisionDetector.checkWorkspaceBoundary(model, workspace, STANDARD_GAP),
+                "模型在安全范围内时不应报告边界违反");
+        }
+
+        @Test
+        @DisplayName("模型超出X轴最大边界 - 应返回true")
+        void testModelExceedsXMaxBoundary() {
+            BoundingBox model = new BoundingBox(
+                new Vector3D(3995, 100, 100),
+                new Vector3D(4005, 200, 200)  // 超出X轴边界
+            );
+
+            assertTrue(CollisionDetector.checkWorkspaceBoundary(model, workspace, STANDARD_GAP),
+                "模型超出X轴边界时应检测到");
+        }
+
+        @Test
+        @DisplayName("模型低于Z轴最小边界 - 应返回true")
+        void testModelBelowZMinBoundary() {
+            BoundingBox model = new BoundingBox(
+                new Vector3D(100, 100, -10),  // Z < 0
+                new Vector3D(200, 200, 5)
+            );
+
+            assertTrue(CollisionDetector.checkWorkspaceBoundary(model, workspace, STANDARD_GAP),
+                "模型低于平台时应检测到");
+        }
+
+        @Test
+        @DisplayName("模型在边界内但违反边界间隙 - 应返回true")
+        void testModelViolatesBoundaryGap() {
+            BoundingBox model = new BoundingBox(
+                new Vector3D(2, 100, 100),  // 距离左边界仅2mm < 5mm
+                new Vector3D(100, 200, 200)
+            );
+
+            assertTrue(CollisionDetector.checkWorkspaceBoundary(model, workspace, STANDARD_GAP),
+                "违反边界间隙时应检测到");
+        }
+
+        @Test
+        @DisplayName("模型恰好满足边界间隙 - 应返回false")
+        void testModelExactlyAtBoundaryGapThreshold() {
+            BoundingBox model = new BoundingBox(
+                new Vector3D(5, 5, 5),  // 恰好5mm边界间隙
+                new Vector3D(3995, 2495, 1495)
+            );
+
+            assertFalse(CollisionDetector.checkWorkspaceBoundary(model, workspace, STANDARD_GAP),
+                "恰好满足边界间隙时不应报告违反");
+        }
+
+        @Test
+        @DisplayName("模型超出Y轴最大边界 - 应返回true")
+        void testModelExceedsYMaxBoundary() {
+            BoundingBox model = new BoundingBox(
+                new Vector3D(100, 2490, 100),
+                new Vector3D(200, 2510, 200)  // 超出Y轴边界
+            );
+
+            assertTrue(CollisionDetector.checkWorkspaceBoundary(model, workspace, STANDARD_GAP),
+                "模型超出Y轴边界时应检测到");
+        }
+
+        @Test
+        @DisplayName("模型包围盒为null - 应抛出NullPointerException")
+        void testModelBoxNull() {
+            assertThrows(NullPointerException.class,
+                () -> CollisionDetector.checkWorkspaceBoundary(null, workspace, STANDARD_GAP),
+                "模型包围盒为null时应抛出异常");
+        }
+
+        @Test
+        @DisplayName("工作空间为null - 应抛出NullPointerException")
+        void testWorkspaceNull() {
+            BoundingBox model = new BoundingBox(
+                new Vector3D(100, 100, 100),
+                new Vector3D(200, 200, 200)
+            );
+
+            assertThrows(NullPointerException.class,
+                () -> CollisionDetector.checkWorkspaceBoundary(model, null, STANDARD_GAP),
+                "工作空间为null时应抛出异常");
+        }
+
+        @Test
+        @DisplayName("负数边界间隙 - 应抛出IllegalArgumentException")
+        void testNegativeBoundaryGap() {
+            BoundingBox model = new BoundingBox(
+                new Vector3D(100, 100, 100),
+                new Vector3D(200, 200, 200)
+            );
+
+            assertThrows(IllegalArgumentException.class,
+                () -> CollisionDetector.checkWorkspaceBoundary(model, workspace, -5.0f),
+                "负数边界间隙应抛出异常");
+        }
+    }
+
+    @Nested
+    @DisplayName("getMinDistance() - 最小距离计算测试")
+    class GetMinDistanceTests {
+
+        @Test
+        @DisplayName("X轴分离 - 应返回X轴距离")
+        void testSeparatedOnXAxis() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(20, 0, 0),  // X轴距离10mm
+                new Vector3D(30, 10, 10)
+            );
+
+            float distance = CollisionDetector.getMinDistance(box1, box2);
+            assertEquals(10.0f, distance, TOLERANCE, "X轴分离时应返回正确距离");
+        }
+
+        @Test
+        @DisplayName("Y轴分离 - 应返回Y轴距离")
+        void testSeparatedOnYAxis() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(0, 25, 0),  // Y轴距离15mm
+                new Vector3D(10, 35, 10)
+            );
+
+            float distance = CollisionDetector.getMinDistance(box1, box2);
+            assertEquals(15.0f, distance, TOLERANCE, "Y轴分离时应返回正确距离");
+        }
+
+        @Test
+        @DisplayName("Z轴分离 - 应返回Z轴距离")
+        void testSeparatedOnZAxis() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(0, 0, 30),  // Z轴距离20mm
+                new Vector3D(10, 10, 40)
+            );
+
+            float distance = CollisionDetector.getMinDistance(box1, box2);
+            assertEquals(20.0f, distance, TOLERANCE, "Z轴分离时应返回正确距离");
+        }
+
+        @Test
+        @DisplayName("对角线分离 - 应返回欧几里得距离")
+        void testDiagonallySeparated() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(20, 20, 20),  // 各轴距离10mm
+                new Vector3D(30, 30, 30)
+            );
+
+            float distance = CollisionDetector.getMinDistance(box1, box2);
+            float expected = (float) Math.sqrt(10 * 10 + 10 * 10 + 10 * 10);  // sqrt(300) ≈ 17.32mm
+            assertEquals(expected, distance, TOLERANCE, "对角线分离时应返回欧几里得距离");
+        }
+
+        @Test
+        @DisplayName("AABB相交 - 应返回0")
+        void testIntersectingBoxes() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(5, 5, 5),  // 相交
+                new Vector3D(15, 15, 15)
+            );
+
+            float distance = CollisionDetector.getMinDistance(box1, box2);
+            assertEquals(0.0f, distance, TOLERANCE, "相交时应返回0");
+        }
+
+        @Test
+        @DisplayName("边界接触 - 应返回0")
+        void testTouchingBoundaries() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(10, 0, 0),  // 紧贴边界
+                new Vector3D(20, 10, 10)
+            );
+
+            float distance = CollisionDetector.getMinDistance(box1, box2);
+            assertEquals(0.0f, distance, TOLERANCE, "边界接触时应返回0");
+        }
+
+        @Test
+        @DisplayName("完全包含 - 应返回0")
+        void testCompleteContainment() {
+            BoundingBox outerBox = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(100, 100, 100)
+            );
+            BoundingBox innerBox = new BoundingBox(
+                new Vector3D(40, 40, 40),
+                new Vector3D(60, 60, 60)
+            );
+
+            float distance = CollisionDetector.getMinDistance(outerBox, innerBox);
+            assertEquals(0.0f, distance, TOLERANCE, "包含时应返回0");
+        }
+
+        @Test
+        @DisplayName("第一个包围盒为null - 应抛出NullPointerException")
+        void testFirstBoxNull() {
+            BoundingBox box2 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+
+            assertThrows(NullPointerException.class,
+                () -> CollisionDetector.getMinDistance(null, box2),
+                "第一个包围盒为null时应抛出异常");
+        }
+
+        @Test
+        @DisplayName("第二个包围盒为null - 应抛出NullPointerException")
+        void testSecondBoxNull() {
+            BoundingBox box1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(10, 10, 10)
+            );
+
+            assertThrows(NullPointerException.class,
+                () -> CollisionDetector.getMinDistance(box1, null),
+                "第二个包围盒为null时应抛出异常");
+        }
+    }
+
+    @Nested
+    @DisplayName("综合场景测试")
+    class IntegrationTests {
+
+        @Test
+        @DisplayName("真实场景：多个小模型在打印平台上")
+        void testRealWorldScenario() {
+            BoundingBox workspace = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(4000, 2500, 1500)
+            );
+
+            // 模型1：左下角
+            BoundingBox model1 = new BoundingBox(
+                new Vector3D(10, 10, 10),
+                new Vector3D(200, 200, 100)
+            );
+
+            // 模型2：右下角（距离模型1足够远）
+            BoundingBox model2 = new BoundingBox(
+                new Vector3D(3700, 10, 10),
+                new Vector3D(3990, 200, 100)
+            );
+
+            // 验证两个模型不碰撞
+            assertFalse(CollisionDetector.checkCollision(model1, model2, STANDARD_GAP),
+                "两个分离的模型不应碰撞");
+
+            // 验证两个模型都在工作空间内
+            assertFalse(CollisionDetector.checkWorkspaceBoundary(model1, workspace, STANDARD_GAP),
+                "模型1应在工作空间内");
+            assertFalse(CollisionDetector.checkWorkspaceBoundary(model2, workspace, STANDARD_GAP),
+                "模型2应在工作空间内");
+
+            // 验证距离计算
+            float distance = CollisionDetector.getMinDistance(model1, model2);
+            assertTrue(distance > STANDARD_GAP, "两个模型应保持安全距离");
+        }
+
+        @Test
+        @DisplayName("边界情况：极小包围盒")
+        void testTinyBoundingBoxes() {
+            BoundingBox tiny1 = new BoundingBox(
+                new Vector3D(0, 0, 0),
+                new Vector3D(0.1f, 0.1f, 0.1f)
+            );
+            BoundingBox tiny2 = new BoundingBox(
+                new Vector3D(10, 0, 0),
+                new Vector3D(10.1f, 0.1f, 0.1f)
+            );
+
+            float distance = CollisionDetector.getMinDistance(tiny1, tiny2);
+            assertEquals(9.9f, distance, 0.01f, "极小包围盒的距离计算应正确");
+        }
+    }
+}

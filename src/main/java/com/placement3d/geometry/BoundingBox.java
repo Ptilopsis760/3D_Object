@@ -178,6 +178,13 @@ public final class BoundingBox {
      * @return true if the boxes intersect
      * @throws NullPointerException if other is null
      */
+    /**
+     * Checks if this bounding box intersects with another.
+     *
+     * @param other the other bounding box
+     * @return true if they intersect, false otherwise
+     * @throws NullPointerException if other is null
+     */
     public boolean intersects(BoundingBox other) {
         Objects.requireNonNull(other, "Other bounding box cannot be null");
         return !(this.max.getX() < other.min.getX() || this.min.getX() > other.max.getX() ||

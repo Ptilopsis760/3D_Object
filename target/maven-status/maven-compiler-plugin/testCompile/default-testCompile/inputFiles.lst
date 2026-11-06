@@ -1,3 +1,4 @@
+D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\algorithm\GreedyPlacementStrategyTest.java
 D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\model\Vector3DTest.java
 D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\io\STLParserTest.java
 D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\geometry\BoundingBoxTest.java
@@ -8,3 +9,4 @@ D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\model\PlacedModelTest.java
 D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\model\TriangleTest.java
 D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\space\OctreeTest.java
 D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\model\MeshTest.java
+D:\CS\JAVA\3D_Object\src\test\java\com\placement3d\algorithm\PlacementEvaluatorTest.java

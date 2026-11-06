@@ -1,0 +1,339 @@
+package com.placement3d.space;
+
+import com.placement3d.geometry.BoundingBox;
+import com.placement3d.model.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Nested;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * CollisionDetector类的单元测试。
+ */
+@DisplayName("CollisionDetector 测试")
+class CollisionDetectorTest {
+
+    private CollisionDetector detector;
+    private ModelInfo cubeModel;
+    private BoundingBox workspace;
+
+    @BeforeEach
+    void setUp() {
+        detector = new CollisionDetector();
+
+        // 创建100x100x100mm立方体模型
+        List<Vector3D> vertices = new ArrayList<>();
+        vertices.add(new Vector3D(0, 0, 0));
+        vertices.add(new Vector3D(100, 0, 0));
+        vertices.add(new Vector3D(100, 100, 0));
+        vertices.add(new Vector3D(0, 100, 0));
+        vertices.add(new Vector3D(0, 0, 100));
+        vertices.add(new Vector3D(100, 0, 100));
+        vertices.add(new Vector3D(100, 100, 100));
+        vertices.add(new Vector3D(0, 100, 100));
+
+        List<Triangle> triangles = new ArrayList<>();
+        triangles.add(new Triangle(vertices.get(0), vertices.get(1), vertices.get(2)));
+
+        Mesh mesh = new Mesh(vertices, triangles);
+        cubeModel = new ModelInfo("cube.stl", mesh, 0);
+
+        // 1000x1000x1000mm工作空间
+        workspace = new BoundingBox(new Vector3D(0, 0, 0), new Vector3D(1000, 1000, 1000));
+    }
+
+    @Nested
+    @DisplayName("碰撞检测测试")
+    class CollisionTests {
+
+        @Test
+        @DisplayName("相同位置的模型应检测为碰撞")
+        void testSamePositionCollision() {
+            Vector3D pos = new Vector3D(100, 100, 100);
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, pos);
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, pos);
+
+            assertTrue(detector.checkCollision(model1, model2));
+        }
+
+        @Test
+        @DisplayName("完全分离的模型不应碰撞")
+        void testSeparatedModelsNoCollision() {
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(200, 200, 200));
+
+            assertFalse(detector.checkCollision(model1, model2));
+        }
+
+        @Test
+        @DisplayName("间隙小于5mm应检测为碰撞")
+        void testGapLessThanMinimum() {
+            // model1: (0,0,0) to (100,100,100)
+            // model2: (103,0,0) to (203,100,100) - 间隙只有3mm
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(103, 0, 0));
+
+            assertTrue(detector.checkCollision(model1, model2, 5.0f));
+        }
+
+        @Test
+        @DisplayName("间隙恰好5mm应通过检测")
+        void testGapExactlyMinimum() {
+            // model1: (0,0,0) to (100,100,100)
+            // model2: (105,0,0) to (205,100,100) - 间隙恰好5mm
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(105, 0, 0));
+
+            assertFalse(detector.checkCollision(model1, model2, 5.0f));
+        }
+
+        @Test
+        @DisplayName("间隙大于5mm应通过检测")
+        void testGapGreaterThanMinimum() {
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(110, 0, 0));
+
+            assertFalse(detector.checkCollision(model1, model2, 5.0f));
+        }
+
+        @Test
+        @DisplayName("使用默认间隙检测")
+        void testDefaultGapCollision() {
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(103, 0, 0));
+
+            assertTrue(detector.checkCollision(model1, model2));
+        }
+
+        @Test
+        @DisplayName("Y轴方向的间隙检测")
+        void testYAxisGapCollision() {
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 103, 0));
+
+            assertTrue(detector.checkCollision(model1, model2, 5.0f));
+        }
+
+        @Test
+        @DisplayName("Z轴方向的间隙检测")
+        void testZAxisGapCollision() {
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 103));
+
+            assertTrue(detector.checkCollision(model1, model2, 5.0f));
+        }
+
+        @Test
+        @DisplayName("null参数应抛出NullPointerException")
+        void testNullParameters() {
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+
+            assertThrows(NullPointerException.class, () -> detector.checkCollision(null, model, 5.0f));
+            assertThrows(NullPointerException.class, () -> detector.checkCollision(model, null, 5.0f));
+        }
+
+        @Test
+        @DisplayName("负间隙参数应抛出IllegalArgumentException")
+        void testNegativeGap() {
+            PlacedModel model1 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(0, 0, 0));
+            PlacedModel model2 = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(100, 0, 0));
+
+            assertThrows(IllegalArgumentException.class,
+                () -> detector.checkCollision(model1, model2, -1.0f));
+        }
+    }
+
+    @Nested
+    @DisplayName("边界违规检测测试")
+    class BoundaryViolationTests {
+
+        @Test
+        @DisplayName("完全在工作空间内的模型不应越界")
+        void testModelInsideWorkspace() {
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(100, 100, 100));
+
+            assertFalse(detector.checkBoundaryViolation(model, workspace, 5.0f));
+        }
+
+        @Test
+        @DisplayName("超出X轴最大边界应检测为越界")
+        void testModelOutsideXMax() {
+            // 模型在(950,100,100)，到(1050,200,200)，超出1000边界
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(950, 100, 100));
+
+            assertTrue(detector.checkBoundaryViolation(model, workspace, 5.0f));
+        }
+
+        @Test
+        @DisplayName("超出Y轴最大边界应检测为越界")
+        void testModelOutsideYMax() {
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(100, 950, 100));
+
+            assertTrue(detector.checkBoundaryViolation(model, workspace, 5.0f));
+        }
+
+        @Test
+        @DisplayName("超出Z轴最大边界应检测为越界")
+        void testModelOutsideZMax() {
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(100, 100, 950));
+
+            assertTrue(detector.checkBoundaryViolation(model, workspace, 5.0f));
+        }
+
+        @Test
+        @DisplayName("超出X轴最小边界应检测为越界")
+        void testModelOutsideXMin() {
+            // 模型在(-10,100,100)，部分在负坐标
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(-10, 100, 100));
+
+            assertTrue(detector.checkBoundaryViolation(model, workspace, 5.0f));
+        }
+
+        @Test
+        @DisplayName("边界间隙不足应检测为越界")
+        void testBoundaryGapViolation() {
+            // 模型在(2,100,100)，距离边界只有2mm，小于5mm
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(2, 100, 100));
+
+            assertTrue(detector.checkBoundaryViolation(model, workspace, 5.0f));
+        }
+
+        @Test
+        @DisplayName("边界间隙充足应通过检测")
+        void testBoundaryGapSufficient() {
+            // 模型在(10,10,10)，距离边界10mm > 5mm
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(10, 10, 10));
+
+            assertFalse(detector.checkBoundaryViolation(model, workspace, 5.0f));
+        }
+
+        @Test
+        @DisplayName("使用默认边界间隙检测")
+        void testDefaultBoundaryGap() {
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(2, 100, 100));
+
+            assertTrue(detector.checkBoundaryViolation(model, workspace));
+        }
+
+        @Test
+        @DisplayName("null参数应抛出NullPointerException")
+        void testBoundaryNullParameters() {
+            PlacedModel model = new PlacedModel(cubeModel, Matrix3x3.IDENTITY, new Vector3D(100, 100, 100));
+
+            assertThrows(NullPointerException.class,
+                () -> detector.checkBoundaryViolation(null, workspace, 5.0f));
+            assertThrows(NullPointerException.class,
+                () -> detector.checkBoundaryViolation(model, null, 5.0f));
+        }
+    }
+
+    @Nested
+    @DisplayName("距离计算测试")
+    class DistanceTests {
+
+        @Test
+        @DisplayName("相交的AABB距离应为0")
+        void testIntersectingDistance() {
+            BoundingBox box1 = new BoundingBox(new Vector3D(0, 0, 0), new Vector3D(100, 100, 100));
+            BoundingBox box2 = new BoundingBox(new Vector3D(50, 50, 50), new Vector3D(150, 150, 150));
+
+            float distance = detector.computeDistance(box1, box2);
+            assertEquals(0.0f, distance, 0.01f);
+        }
+
+        @Test
+        @DisplayName("分离的AABB应计算正确距离")
+        void testSeparatedDistance() {
+            BoundingBox box1 = new BoundingBox(new Vector3D(0, 0, 0), new Vector3D(100, 100, 100));
+            BoundingBox box2 = new BoundingBox(new Vector3D(200, 0, 0), new Vector3D(300, 100, 100));
+
+            float distance = detector.computeDistance(box1, box2);
+            assertEquals(100.0f, distance, 0.01f); // X轴间隙100mm
+        }
+
+        @Test
+        @DisplayName("对角线分离的AABB应计算正确距离")
+        void testDiagonalDistance() {
+            BoundingBox box1 = new BoundingBox(new Vector3D(0, 0, 0), new Vector3D(100, 100, 100));
+            BoundingBox box2 = new BoundingBox(new Vector3D(200, 200, 200), new Vector3D(300, 300, 300));
+
+            float distance = detector.computeDistance(box1, box2);
+            float expected = (float) Math.sqrt(100*100 + 100*100 + 100*100); // √30000 ≈ 173.2
+            assertEquals(expected, distance, 0.1f);
+        }
+
+        @Test
+        @DisplayName("null参数应抛出NullPointerException")
+        void testDistanceNullParameters() {
+            BoundingBox box = new BoundingBox(new Vector3D(0, 0, 0), new Vector3D(100, 100, 100));
+
+            assertThrows(NullPointerException.class, () -> detector.computeDistance(null, box));
+            assertThrows(NullPointerException.class, () -> detector.computeDistance(box, null));
+        }
+    }
+
+    @Nested
+    @DisplayName("边界相邻性测试")
+    class BoundaryAdjacencyTests {
+
+        @Test
+        @DisplayName("贴近X最小边界的AABB应检测为相邻")
+        void testAdjacentToXMin() {
+            BoundingBox box = new BoundingBox(new Vector3D(0, 100, 100), new Vector3D(100, 200, 200));
+
+            assertTrue(detector.isAdjacentToBoundary(box, workspace, 10.0f));
+        }
+
+        @Test
+        @DisplayName("贴近X最大边界的AABB应检测为相邻")
+        void testAdjacentToXMax() {
+            BoundingBox box = new BoundingBox(new Vector3D(900, 100, 100), new Vector3D(1000, 200, 200));
+
+            assertTrue(detector.isAdjacentToBoundary(box, workspace, 10.0f));
+        }
+
+        @Test
+        @DisplayName("远离所有边界的AABB不应检测为相邻")
+        void testNotAdjacentToBoundary() {
+            BoundingBox box = new BoundingBox(new Vector3D(400, 400, 400), new Vector3D(500, 500, 500));
+
+            assertFalse(detector.isAdjacentToBoundary(box, workspace, 10.0f));
+        }
+
+        @Test
+        @DisplayName("距离恰好等于阈值应检测为相邻")
+        void testAdjacentExactThreshold() {
+            BoundingBox box = new BoundingBox(new Vector3D(10, 100, 100), new Vector3D(110, 200, 200));
+
+            assertTrue(detector.isAdjacentToBoundary(box, workspace, 10.0f));
+        }
+
+        @Test
+        @DisplayName("负阈值应抛出IllegalArgumentException")
+        void testNegativeThreshold() {
+            BoundingBox box = new BoundingBox(new Vector3D(0, 0, 0), new Vector3D(100, 100, 100));
+
+            assertThrows(IllegalArgumentException.class,
+                () -> detector.isAdjacentToBoundary(box, workspace, -1.0f));
+        }
+    }
+
+    @Nested
+    @DisplayName("toString测试")
+    class ToStringTests {
+
+        @Test
+        @DisplayName("toString应返回有意义的字符串")
+        void testToString() {
+            String str = detector.toString();
+
+            assertNotNull(str);
+            assertTrue(str.contains("CollisionDetector"));
+        }
+    }
+}
