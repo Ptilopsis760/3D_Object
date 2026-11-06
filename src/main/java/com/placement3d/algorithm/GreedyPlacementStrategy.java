@@ -422,11 +422,6 @@ public class GreedyPlacementStrategy implements PlacementStrategy {
         return 0.0; // 无惩罚
     }
 
-    @Override
-    public String toString() {
-        return "GreedyPlacementStrategy[DBLF]";
-    }
-
     /**
      * 多批次复制摆放实现。
      *
