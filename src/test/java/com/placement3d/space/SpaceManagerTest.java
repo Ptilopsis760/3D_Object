@@ -29,30 +29,57 @@ class SpaceManagerTest {
         workspace = new BoundingBox(new Vector3D(0, 0, 0), new Vector3D(1000, 1000, 1000));
         spaceManager = new SpaceManager(workspace, 5.0f);
 
-        // 创建100x100x100mm立方体模型
-        List<Vector3D> vertices = new ArrayList<>();
-        vertices.add(new Vector3D(0, 0, 0));
-        vertices.add(new Vector3D(100, 0, 0));
-        vertices.add(new Vector3D(100, 100, 0));
-        vertices.add(new Vector3D(0, 100, 0));
-        vertices.add(new Vector3D(0, 0, 100));
-        vertices.add(new Vector3D(100, 0, 100));
-        vertices.add(new Vector3D(100, 100, 100));
-        vertices.add(new Vector3D(0, 100, 100));
-
-        List<Triangle> triangles = new ArrayList<>();
-        triangles.add(new Triangle(vertices.get(0), vertices.get(1), vertices.get(2)));
-
-        Mesh mesh = new Mesh(triangles, "cube.stl");
+        // 创建100x100x100mm立方体模型（12个三角形的完整封闭立方体）。
+        // 原夹具只有1个三角形：体积为0、AABB退化为扁平，导致质心和碰撞检测异常。
+        // 改为完整立方体，与MeshTest/GreedyPlacementStrategyTest的夹具一致。
+        Mesh mesh = createCubeMesh(100.0f, "cube.stl");
         cubeModel = new ModelInfo("cube.stl", mesh, 0);
 
         // 创建50x50x50mm小立方体模型
-        List<Vector3D> smallVertices = new ArrayList<>();
-        for (int i = 0; i < 8; i++) {
-            smallVertices.add(vertices.get(i).multiply(0.5f));
-        }
-        Mesh smallMesh = new Mesh(triangles, "small_cube.stl");
+        Mesh smallMesh = createCubeMesh(50.0f, "small_cube.stl");
         smallCubeModel = new ModelInfo("small_cube.stl", smallMesh, 1);
+    }
+
+    /**
+     * 构造边长为 size 的完整封闭立方体网格（12个三角形，每面2个）。
+     * 立方体一角在原点，沿 +X/+Y/+Z 延伸 size，质心在 (size/2, size/2, size/2)。
+     * 替代原先只有1个三角形的退化夹具。
+     *
+     * @param size 边长（mm）
+     * @param fileName 用于Mesh的文件名
+     * @return 完整封闭的立方体网格
+     */
+    private Mesh createCubeMesh(float size, String fileName) {
+        Vector3D v000 = new Vector3D(0, 0, 0);
+        Vector3D v100 = new Vector3D(size, 0, 0);
+        Vector3D v110 = new Vector3D(size, size, 0);
+        Vector3D v010 = new Vector3D(0, size, 0);
+        Vector3D v001 = new Vector3D(0, 0, size);
+        Vector3D v101 = new Vector3D(size, 0, size);
+        Vector3D v111 = new Vector3D(size, size, size);
+        Vector3D v011 = new Vector3D(0, size, size);
+
+        List<Triangle> triangles = new ArrayList<>();
+        // 底面 z=0
+        triangles.add(new Triangle(v000, v100, v110));
+        triangles.add(new Triangle(v000, v110, v010));
+        // 顶面 z=size
+        triangles.add(new Triangle(v001, v111, v101));
+        triangles.add(new Triangle(v001, v011, v111));
+        // 前面 y=0
+        triangles.add(new Triangle(v000, v101, v100));
+        triangles.add(new Triangle(v000, v001, v101));
+        // 后面 y=size
+        triangles.add(new Triangle(v010, v110, v111));
+        triangles.add(new Triangle(v010, v111, v011));
+        // 左面 x=0
+        triangles.add(new Triangle(v000, v010, v011));
+        triangles.add(new Triangle(v000, v011, v001));
+        // 右面 x=size
+        triangles.add(new Triangle(v100, v111, v110));
+        triangles.add(new Triangle(v100, v101, v111));
+
+        return new Mesh(triangles, fileName);
     }
 
     @Nested
@@ -545,7 +572,7 @@ class SpaceManagerTest {
                     PlacedModel model = new PlacedModel(
                         smallCubeModel,
                         Matrix3x3.IDENTITY,
-                        new Vector3D(x * 60, y * 60, 10)
+                        new Vector3D(x * 60 + 30, y * 60 + 30, 30)
                     );
 
                     if (spaceManager.canPlace(model)) {

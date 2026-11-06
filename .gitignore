@@ -1,0 +1,70 @@
+# ===========================
+# Maven 构建产物
+# ===========================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# ===========================
+# CMake / OpenMesh 构建产物
+# ===========================
+build/
+cmake-build-*/
+*.vcxproj
+*.vcxproj.filters
+*.slnx
+*.sln
+*.suo
+*.user
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CPackConfig.cmake
+CPackSourceConfig.cmake
+CTestTestfile.cmake
+install_manifest.txt
+openmesh.pc
+
+# ===========================
+# Java 编译产物（散落在根目录的）
+# ===========================
+*.class
+
+# ===========================
+# IDE 配置
+# ===========================
+.idea/
+*.iml
+.vscode/settings.json
+.vscode/*.code-workspace
+
+# ===========================
+# 操作系统杂项
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# 日志和临时文件
+# ===========================
+*.log
+*.tmp
+*.bak
+*.orig
+
+# ===========================
+# 需要保留的（防止被上面的规则误杀）
+# ===========================
+# OpenMesh 源码保留（不是构建产物）
+!OpenMesh-11.0.0/src/
+!OpenMesh-11.0.0/cmake/
+!OpenMesh-11.0.0/cmake-library/
+!OpenMesh-11.0.0/CMakeLists.txt
+!OpenMesh-11.0.0/CHANGELOG.md
+!OpenMesh-11.0.0/LICENSE
+!OpenMesh-11.0.0/README.md
+
+# Maven wrapper 脚本保留
+!mvnw
+!mvnw.cmd
+!.mvn/
